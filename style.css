@@ -1,0 +1,35 @@
+/* Общий стиль двух страниц: «О программе» и «Политика конфиденциальности».
+   Ни шрифтов, ни картинок, ни скриптов со стороны: страница о приватности
+   сама ничего не загружает. Светлая и тёмная тема — по настройке системы. */
+:root{
+  --bg:#ffffff; --fg:#1d1f23; --muted:#5b6170; --line:#e3e5ea;
+  --accent:#1f5fbf; --card:#f5f7fa;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#14161a; --fg:#e7e9ee; --muted:#a3a9b6; --line:#2c3038;
+    --accent:#8ab8ff; --card:#1c1f25;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",Arial,sans-serif;
+}
+main{max-width:44rem;margin:0 auto;padding:24px 16px 48px}
+h1{font-size:1.75rem;line-height:1.25;margin:0 0 .35rem}
+h2{font-size:1.15rem;line-height:1.35;margin:2rem 0 .5rem}
+p{margin:.6rem 0}
+.lead{color:var(--muted);margin:0 0 1.5rem}
+.key{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+a{color:var(--accent)}
+code{font-size:.9em;overflow-wrap:anywhere}
+ul{padding-left:1.25rem;margin:.6rem 0}
+li{margin:.4rem 0}
+.lang{font-size:.95rem;margin:0 0 1.25rem}
+hr{border:0;border-top:1px solid var(--line);margin:3rem 0}
+footer{color:var(--muted);font-size:.9rem;margin-top:2.5rem}
+/* «конфиденциальности» на 320 px встаёт по ширине впритык — на узком экране заголовок меньше */
+@media (max-width:380px){ h1{font-size:1.45rem} }
